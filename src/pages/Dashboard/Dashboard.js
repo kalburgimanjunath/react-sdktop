@@ -36,6 +36,9 @@ function Dashboard() {
           Logout
         </button>
       </div> */}
+      <button className="dashboard__btn" onClick={logout}>
+        Logout
+      </button>
     </div>
   );
 }

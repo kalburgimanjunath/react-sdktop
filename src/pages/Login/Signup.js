@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate, Redirect,Navigate  } from 'react-router-dom';
+import { Link, useNavigate, Redirect, Navigate } from 'react-router-dom';
 import {
   auth,
   registerWithEmailAndPassword,
@@ -31,9 +31,7 @@ function Signup({ navigation }) {
     <div className="register">
       {isLoggedIn ? (
         <div>
-          Logged in
           <Navigate replace to="/dashboard" />
-          {/* <Redirect to={'/dashboard'} /> */}
         </div>
       ) : (
         <div className="register__container">
