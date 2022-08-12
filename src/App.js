@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/dasbhoard" element={<Dashboard />}></Route>
+        <Route path="dasbhoard" element={<Dashboard />}></Route>
         <Route path="/login" element={<Login />} exact></Route>
         <Route path="/*" element={<Signup />}></Route>
       </Routes>
