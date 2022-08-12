@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate, Redirect } from 'react-router-dom';
+import { Link, useNavigate, Redirect,Navigate  } from 'react-router-dom';
 import {
   auth,
   registerWithEmailAndPassword,
@@ -22,48 +22,56 @@ function Signup({ navigation }) {
     if (loading) return;
     if (user) {
       setLogin(true);
+      // console.log('logged in');
       // history.replace('/dashboard');
     }
   }, [user, loading]);
 
   return (
     <div className="register">
-      {isLoggedIn ? <Redirect to={'/dashboard'} /> : null}
-      <div className="register__container">
-        <input
-          type="text"
-          className="register__textBox"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
-        />
-        <input
-          type="text"
-          className="register__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="register__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button className="register__btn" onClick={register}>
-          Register
-        </button>
-        <button
-          className="register__btn register__google"
-          onClick={signInWithGoogle}
-        >
-          Register with Google
-        </button>
+      {isLoggedIn ? (
         <div>
-          Already have an account? <Link to="/login">Login</Link> now.
+          Logged in
+          <Navigate replace to="/dashboard" />
+          {/* <Redirect to={'/dashboard'} /> */}
         </div>
-      </div>
+      ) : (
+        <div className="register__container">
+          <input
+            type="text"
+            className="register__textBox"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Full Name"
+          />
+          <input
+            type="text"
+            className="register__textBox"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail Address"
+          />
+          <input
+            type="password"
+            className="register__textBox"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button className="register__btn" onClick={register}>
+            Register
+          </button>
+          <button
+            className="register__btn register__google"
+            onClick={signInWithGoogle}
+          >
+            Register with Google
+          </button>
+          <div>
+            Already have an account? <Link to="/login">Login</Link> now.
+          </div>
+        </div>
+      )}
     </div>
   );
 }

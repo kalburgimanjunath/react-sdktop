@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css';
+// import './Dashboard.css';
 // import { auth, db, logout } from './firebase';
 import React from 'react';
 // import { query, collection, getDocs, where } from 'firebase/firestore';
@@ -27,6 +27,7 @@ function Dashboard() {
   // }, [user, loading]);
   return (
     <div className="dashboard">
+      dashboard
       {/* <div className="dashboard__container">
         Logged in as
         <div>{name}</div>

@@ -9,9 +9,9 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
         <Route path="/dasbhoard" element={<Dashboard />}></Route>
-        <Route path="/*" element={<Signup />} exact></Route>
+        <Route path="/" element={<Login />} exact></Route>
+        <Route path="/*" element={<Signup />}></Route>
       </Routes>
     </div>
   );
